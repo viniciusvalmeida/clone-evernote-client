@@ -5,7 +5,9 @@ nav.navbar {
     border-bottom: 1px solid black;
 
     .navbar-brand {
-        height: 40px;
-        margin-top:15px;
+        img {
+            height: 40px;
+            margin-top:15px;
+        }
     }
 }

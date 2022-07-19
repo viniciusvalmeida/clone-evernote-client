@@ -1,8 +1,9 @@
 import { Fragment } from "react";
 import PresentationImage from "../../assets/images/presentation.png";
 import Header from "../../components/header";
-import { Column, Section,Title,Container, Button } from "rbx";
+import { Column, Section, Title, Container } from "rbx";
 import "../../styles/home.scss"
+import { Link } from "react-router-dom";
 
 export default function HomeScreen() {
     return(
@@ -36,14 +37,12 @@ export default function HomeScreen() {
                             >
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum, in doloribus adipisci sit alias atque commodi rerum magnam nihil nulla nam, ea officia at ipsam quo earum fuga labore.
                             </Title>
-                            <Button
-                                as="a"
-                                rounded
-                                className="buttom is-outlined is-white is-normal"
-                                href="http://localhost:3000"
+                            <Link
+                                to="/register"
+                                className="buttom is-outlined has-text-white is-red"
                             >
                                 <strong>Register for free Now</strong>
-                            </Button>
+                            </Link>
                         </Column>
                         
                         <Column 
