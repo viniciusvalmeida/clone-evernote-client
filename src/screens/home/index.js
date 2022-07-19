@@ -37,6 +37,7 @@ export default function HomeScreen() {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eum, in doloribus adipisci sit alias atque commodi rerum magnam nihil nulla nam, ea officia at ipsam quo earum fuga labore.
                             </Title>
                             <Button
+                                as="a"
                                 rounded
                                 className="buttom is-outlined is-white is-normal"
                                 href="http://localhost:3000"
