@@ -75,6 +75,7 @@ export default function RegisterForm () {
                                         <a 
                                             className="button is-white has-text-custom-purple"
                                             onClick={e => setRedirectToLogin(true)}
+                                            href
                                         >
                                             Login
                                         </a>
