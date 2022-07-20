@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Button, Field, Control, Input, Column, Section, Help, Label } from "rbx";
-import { Navigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function RegisterForm () {
+    const navigate = useNavigate()
+    
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -10,7 +13,7 @@ export default function RegisterForm () {
     const [error, setError] = useState(false)
 
     if (redirectToLogin)
-        return <Navigate to={{pathname: "/login"}}/>
+        navigate("/login", { replace: true })
 
     return (
         <>
