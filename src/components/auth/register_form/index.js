@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, Field, Control, Input, Column, Help, Label } from "rbx";
 import { useNavigate } from "react-router-dom";
+import UserService from "../../../services/users";
 
 export default function RegisterForm () {
     const navigate = useNavigate()
@@ -9,8 +10,18 @@ export default function RegisterForm () {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [redirectToLogin, setRedirectToLogin] = useState(false)
-    // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState(false)
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        try {
+            const user = await UserService.register({ name: name, email: email, password: password })
+            setRedirectToLogin(true)
+        } catch (error) {
+            setError(true)
+        }
+    }
 
     if (redirectToLogin)
         navigate("/login", { replace: true })
@@ -18,7 +29,7 @@ export default function RegisterForm () {
     return (
         <>
             <Column.Group centered>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <Column size={12}>
                         <Field>
                             <Label size="small">
