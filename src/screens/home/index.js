@@ -38,7 +38,7 @@ export default function HomeScreen() {
                             </Title>
                             
                             <Link to="/register">
-                                <Button className="button is-outlined is-white is-large">
+                                <Button className="is-rounded is-outlined is-white is-large">
                                     <strong>Register for free Now</strong>
                                 </Button>
                             </Link>
