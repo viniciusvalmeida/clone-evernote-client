@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Header from "../../components/header";
 import { Column, Section, Title, Container, Button } from "rbx";
 import { Link } from "react-router-dom";
@@ -7,7 +6,7 @@ import "../../styles/home.scss"
 
 export default function HomeScreen() {
     return(
-        <Fragment>
+        <>
             
             <Header />
 
@@ -62,6 +61,6 @@ export default function HomeScreen() {
             
             </Section>
             
-        </Fragment>
+        </>
     )
 }
