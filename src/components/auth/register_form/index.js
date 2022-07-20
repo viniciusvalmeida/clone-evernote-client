@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Button, Field, Control, Input, Column, Section, Help, Label } from "rbx";
-// import { Navigate } from "react-router-dom";
+import { Button, Field, Control, Input, Column, Help, Label } from "rbx";
 import { useNavigate } from "react-router-dom";
 
 export default function RegisterForm () {
@@ -10,6 +9,7 @@ export default function RegisterForm () {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [redirectToLogin, setRedirectToLogin] = useState(false)
+    // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState(false)
 
     if (redirectToLogin)
