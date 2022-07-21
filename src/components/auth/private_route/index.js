@@ -1,14 +1,13 @@
-import { Route, useNavigate } from "react-router-dom";
+import { Route, Navigate } from "react-router-dom";
 
 const privateRoute = ({ component: Component, ...rest }) => (
-    
-    <Route {...rest} render={props => {
-        const navigate = useNavigate()
         
-        localStorage.getItem('user')
-            ? <Component {...props} />
-            : navigate('/login', {replace: true})
-    }} />
+        <Route {...rest} render={props => {
+            
+            localStorage.getItem('user')
+                ? <Component {...props} />
+                : <Navigate to='/login' />
+        }} />
 )
 
 export default privateRoute

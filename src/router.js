@@ -22,13 +22,13 @@ export default function Router() {
                     exact path="/login"
                     element={<Login />}
                 />
-                <PrivateRoute
+                <Route
                     exact path="/notes"
-                    element={<NotesIndex />}
+                    element={<PrivateRoute component={NotesIndex} />}
                 />
-                <PrivateRoute
+                <Route
                     exact path="/users/edit"
-                    element={<UserEdit />}
+                    element={<PrivateRoute component={UserEdit} />}
                 />
             </Routes>
         </BrowserRouter>
