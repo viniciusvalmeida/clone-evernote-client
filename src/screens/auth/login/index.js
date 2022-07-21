@@ -1,6 +1,7 @@
 import Header from "../../../components/header"
 import { Column, Section, Title, Container, Card } from "rbx";
 import LogoImage from "../../../assets/images/logo.png";
+import LoginForm from "../../../components/auth/login_form";
 import "../../../styles/auth.scss";
 
 const Login = () => (
@@ -36,6 +37,8 @@ const Login = () => (
                                             </Title>
                                         </Column>
                                     </Column.Group>
+                                    
+                                    <LoginForm />
                                 </Section>
                             </Card.Content>
                         </Card>
@@ -43,8 +46,6 @@ const Login = () => (
                 </Column.Group>
             </Container>
         </Section>
-        
-
     </>
 )
 
