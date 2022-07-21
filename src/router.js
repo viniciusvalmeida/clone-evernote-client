@@ -4,6 +4,7 @@ import Register from "./screens/auth/register";
 import Login from "./screens/auth/login";
 import NotesIndex from "./screens/notes/index";
 import UserEdit from "./screens/users/edit";
+import PrivateRoute from "./components/auth/private_route";
 
 export default function Router() {
     return(
@@ -21,11 +22,11 @@ export default function Router() {
                     exact path="/login"
                     element={<Login />}
                 />
-                <Route
+                <PrivateRoute
                     exact path="/notes"
                     element={<NotesIndex />}
                 />
-                <Route
+                <PrivateRoute
                     exact path="/users/edit"
                     element={<UserEdit />}
                 />
