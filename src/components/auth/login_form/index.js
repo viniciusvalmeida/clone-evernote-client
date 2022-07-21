@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, Field, Control, Input, Column, Help, Label } from "rbx";
 import { useNavigate } from "react-router-dom";
+import UserService from "../../../services/users";
 
 export default function LoginForm() {
     const navigate = useNavigate()
@@ -16,10 +17,21 @@ export default function LoginForm() {
     else if (redirectToNotes)
         navigate("/notes", { replace: true })
 
+    const handleSubmit = async e => {
+        e.preventDefault()
+
+        try {
+            await UserService.login({ email: email, password: password })
+            setRedirectToNotes(true)
+        } catch (error) {
+            setError(true)
+        }
+    }
+
     return (
         <>
             <Column.Group centered>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <Column size={12}>
                         <Field>
                             <Label size="small">
