@@ -1,5 +1,8 @@
+import HeaderLogged from "../../../components/header_logged";
+
 const Notes = () => (
     <>
+        <HeaderLogged />
         Hello World
     </>
 )
