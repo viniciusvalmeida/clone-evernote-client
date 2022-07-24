@@ -31,8 +31,12 @@ export default function Router() {
                     }
                 />
                 <Route
-                    exact path="/users/edit"
-                    element={<PrivateRoute component={UserEdit} />}
+                   exact path="/users/edit"
+                   element={
+                       <PrivateRoute>
+                           <UserEdit />
+                       </PrivateRoute>
+                   }
                 />
             </Routes>
         </BrowserRouter>
