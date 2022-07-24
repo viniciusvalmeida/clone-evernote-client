@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 
 export default function HeaderLogged(props) {
+    const user = JSON.parse(localStorage.getItem('user'))
     const navigate = useNavigate()
     const [redirectToHome, setRedirectToHome] = useState(false)
 
@@ -51,7 +52,9 @@ export default function HeaderLogged(props) {
                                     color="white"
                                     outlined
                                 >
-                                    <span>Vinicius</span>
+                                    <span>
+                                        {user.name}
+                                    </span>
                                 </Button>
                             </Dropdown.Trigger>
 
