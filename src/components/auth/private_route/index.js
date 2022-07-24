@@ -1,13 +1,9 @@
-import { Route, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
-const privateRoute = ({ component: Component, ...rest }) => (
-        
-        <Route {...rest} render={props => {
-            
-            localStorage.getItem('user')
-                ? <Component {...props} />
-                : <Navigate to='/login' />
-        }} />
+const privateRoute = ({children}) => (
+        localStorage.getItem('user') 
+                ? children
+                : <Navigate to='/login' replace />
 )
 
 export default privateRoute

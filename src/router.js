@@ -24,7 +24,11 @@ export default function Router() {
                 />
                 <Route
                     exact path="/notes"
-                    element={<PrivateRoute component={NotesIndex} />}
+                    element={
+                        <PrivateRoute>
+                            <NotesIndex />
+                        </PrivateRoute>
+                    }
                 />
                 <Route
                     exact path="/users/edit"
