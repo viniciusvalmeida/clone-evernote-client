@@ -36,6 +36,17 @@ export default function HeaderLogged(props) {
                         </Link>
                     </Column>
                 </Column.Group>
+                
+                <Navbar.Burger
+                    className="navbar-burguer burguer"
+                    aria-label="menu"
+                    aria-expanded="false"
+                    data-target="navbar-menu"
+                >
+                    <span aria-hidden="true">teste</span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </Navbar.Burger>
             </Navbar.Brand>
 
             <Navbar.Menu>
@@ -53,7 +64,7 @@ export default function HeaderLogged(props) {
                                     outlined
                                 >
                                     <span>
-                                        {user.name}
+                                        {user.name} ▼
                                     </span>
                                 </Button>
                             </Dropdown.Trigger>
