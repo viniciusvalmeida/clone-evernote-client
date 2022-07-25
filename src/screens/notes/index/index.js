@@ -1,10 +1,11 @@
 import HeaderLogged from "../../../components/header_logged";
+import Notes from "../../../components/notes"
 
-const Notes = () => (
+const NotesScreen = () => (
     <>
         <HeaderLogged />
-        Hello World
+        <Notes />
     </>
 )
 
-export default Notes
+export default NotesScreen
