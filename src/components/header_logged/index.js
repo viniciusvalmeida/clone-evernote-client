@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navbar, Container, Column, Button, Dropdown } from "rbx";
+import { Navbar, Column, Button, Dropdown } from "rbx";
 import LogoImage from "../../assets/images/logo-white.png"
 import "../../styles/header.scss"
 import UserService from "../../services/users"
@@ -50,6 +50,23 @@ export default function HeaderLogged(props) {
             </Navbar.Brand>
 
             <Navbar.Menu>
+                <Navbar.Segment
+                    as="div"
+                    className="navbar-item navbar-start"
+                    align="start"
+                >
+                    <Navbar.Item as="div">
+                        <Button
+                            className="open-button"
+                            color="white"
+                            outlined
+                            onClick={() => props.setIsOpen(true)}
+                        >
+                            <FontAwesomeIcon icon={faList} />
+                        </Button>
+                    </Navbar.Item>   
+                </Navbar.Segment>
+                
                 <Navbar.Segment
                     as="div"
                     className="navbar-item navbar-end"
