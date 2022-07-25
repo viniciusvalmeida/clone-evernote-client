@@ -12,8 +12,8 @@ export default function HeaderLogged(props) {
     const navigate = useNavigate()
     const [redirectToHome, setRedirectToHome] = useState(false)
 
-    const logOut = async () => {
-        await UserService.logout()
+    const logOut = () => {
+        UserService.logout()
         setRedirectToHome(true)
     }
 
