@@ -81,7 +81,7 @@ export default function HeaderLogged(props) {
 
                                     <Dropdown.Item as="div">
                                         <a 
-                                            href="#"
+                                            href="/#"
                                             onClick={e => logOut()}
                                         >
                                             LogOut
