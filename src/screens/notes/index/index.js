@@ -1,6 +1,5 @@
 import HeaderLogged from "../../../components/header_logged";
 import Notes from "../../../components/notes"
-import { Column } from "rbx";
 import "../../../styles/notes.scss"
 import { useState } from "react";
 
