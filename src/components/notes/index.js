@@ -15,6 +15,8 @@ export default function Notes(props) {
         if (response.data.length >= 1) {
             setNotes(response.data.reverse())
             setCurrentNote(response.data[0])
+        } else {
+            setNotes([])
         }
     }
 
@@ -30,6 +32,11 @@ export default function Notes(props) {
     const selectNote = (id) => {
         const note = notes.find((note) => note._id === id)
         setCurrentNote(note)
+    }
+
+    const deleteNote = async (note) => {
+        await NoteService.delete(note._id)
+        fetchNotes()
     }
 
     return (
@@ -60,6 +67,7 @@ export default function Notes(props) {
                         notes={notes}
                         selectNote={selectNote}
                         createNote={createNote}
+                        deleteNote={deleteNote}
                         current_note={current_note}
                     />
                 </Menu>

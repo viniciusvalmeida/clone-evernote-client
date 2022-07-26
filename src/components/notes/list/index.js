@@ -1,5 +1,7 @@
 import { Column, Tag, Title, List, Button } from "rbx";
 import Moment from "moment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function ListNotes(props) {
     return (
@@ -42,6 +44,14 @@ export default function ListNotes(props) {
                                 <Tag color="dark">
                                     { Moment(item.created_at).format('DD/MM') }
                                 </Tag>
+                            </Column>
+
+                            <Column size={2}>
+                                <FontAwesomeIcon
+                                    icon={faTrash}
+                                    color="grey"
+                                    onClick={ () => props.deleteNote(item) }
+                                />
                             </Column>
                         </Column.Group>
                     </List.Item>
