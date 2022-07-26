@@ -22,6 +22,11 @@ export default function Notes(props) {
         fetchNotes()
     }, [])
 
+    const createNote = async (params) => {
+        await NoteService.create()
+        fetchNotes()
+    }
+
     const selectNote = (id) => {
         const note = notes.find((note) => note._id === id)
         setCurrentNote(note)
@@ -54,6 +59,7 @@ export default function Notes(props) {
                     <List
                         notes={notes}
                         selectNote={selectNote}
+                        createNote={createNote}
                         current_note={current_note}
                     />
                 </Menu>

@@ -1,4 +1,4 @@
-import { Column, Tag, Title, List } from "rbx";
+import { Column, Tag, Title, List, Button } from "rbx";
 import Moment from "moment";
 
 export default function ListNotes(props) {
@@ -12,6 +12,18 @@ export default function ListNotes(props) {
                     <Title size={6}>
                         { props.notes.length } Notes
                     </Title>
+                </Column>
+
+                <Column size={2}>
+                    <Button
+                        state="active"
+                        color="custom-purple"
+                        outlined
+                        size="small"
+                        onClick={ () => props.createNote() }
+                    >
+                        Notes +
+                    </Button>
                 </Column>
             </Column.Group>
 
