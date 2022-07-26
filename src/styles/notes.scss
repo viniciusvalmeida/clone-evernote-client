@@ -3,7 +3,16 @@
 .notes {
     min-height: calc(100vh - 70px);
     margin-left: 0px;
+    margin-right: 0px;
     margin-top: 0px;
+
+    .list-item {
+        margin-top: 15px;
+    }
+
+    .list-item.is-active {
+        background-color: $custom-grey-light;
+    }
 }
 
 .bm-menu {
