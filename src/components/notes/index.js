@@ -40,6 +40,16 @@ export default function Notes(props) {
         fetchNotes()
     }
 
+    const updateNote = async (oldNote, params) => {
+        const updatedNote = await NoteService.update(oldNote._id, params)
+        const index = notes.indexOf(oldNote)
+        const newNotes = notes
+        
+        newNotes[index] = updatedNote.data
+        setNotes(newNotes)
+        setCurrentNote(updatedNote.data)
+    }
+
     return (
         <>
             <Column.Group
@@ -78,7 +88,10 @@ export default function Notes(props) {
                     className="notes-editor"
                     id="notes-editor"
                 >
-                    <Editor note={current_note} />
+                    <Editor 
+                        note={current_note}
+                        updateNote={updateNote}
+                    />
                 </Column>
             </Column.Group>
         </>
