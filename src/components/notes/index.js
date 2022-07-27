@@ -5,6 +5,7 @@ import "../../styles/notes.scss";
 import List from "../notes/list";
 import Editor from "../notes/editor";
 import NoteService from "../../services/note"
+import Search from "../notes/search"
 
 export default function Notes(props) {
     const [ notes, setNotes ] = useState([])
@@ -50,6 +51,11 @@ export default function Notes(props) {
         setCurrentNote(updatedNote.data)
     }
 
+    const searchNotes = async query => {
+        const response = await NoteService.search(query)
+        setNotes(response.data)
+    }
+
     return (
         <>
             <Column.Group
@@ -70,7 +76,10 @@ export default function Notes(props) {
                             size={10}
                             offset={1}
                         >
-                            Search...
+                            <Search
+                                searchNotes={searchNotes}
+                                fetchNotes={fetchNotes}
+                            />
                         </Column>
                     </Column.Group>
 
