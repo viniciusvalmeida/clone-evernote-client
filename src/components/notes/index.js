@@ -57,7 +57,6 @@ export default function Notes(props) {
     }
 
     return (
-        <>
             <Column.Group
                 className="notes"
                 id="notes"
@@ -103,6 +102,5 @@ export default function Notes(props) {
                     />
                 </Column>
             </Column.Group>
-        </>
     )
 }
