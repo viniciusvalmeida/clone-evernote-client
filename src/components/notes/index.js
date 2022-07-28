@@ -26,7 +26,7 @@ export default function Notes(props) {
         fetchNotes()
     }, [])
 
-    const createNote = async (params) => {
+    const createNote = async () => {
         await NoteService.create()
         fetchNotes()
     }
