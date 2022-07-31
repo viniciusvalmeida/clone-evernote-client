@@ -1,7 +1,11 @@
 import { Card, Column, Container, Section, Title } from "rbx";
 import HeaderLogged from "../../../components/header_logged";
+import UserEditForm from "../../../components/users/edit_form"
+import UserPasswordForm from "../../../components/users/password_form"
+import UserDelete from "../../../components/users/delete"
+import "../../../styles/users.scss"
 
-const UserEdit = () => {
+const UserEditScreen = () => {
     
     return (
         <>
@@ -26,7 +30,7 @@ const UserEdit = () => {
 
                             <Card>
                                 <Card.Content>
-                                    Users Edit Form...
+                                    <UserEditForm />
                                 </Card.Content>
                             </Card>
                         </Column>
@@ -46,7 +50,7 @@ const UserEdit = () => {
 
                             <Card>
                                 <Card.Content>
-                                    Users Edit Password Form...
+                                    <UserPasswordForm />
                                 </Card.Content>
                             </Card>
                         </Column>
@@ -57,7 +61,7 @@ const UserEdit = () => {
                             size={4}
                             className="has-text-right"
                         >
-                            Users Delete Button...
+                            <UserDelete />
                         </Column>
                     </Column.Group>
                 </Container>
@@ -66,4 +70,4 @@ const UserEdit = () => {
     )
 }
 
-export default UserEdit
+export default UserEditScreen
