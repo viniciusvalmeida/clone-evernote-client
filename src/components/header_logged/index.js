@@ -8,7 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 
 export default function HeaderLogged(props) {
-    const user = JSON.parse(localStorage.getItem('user'))
+    // eslint-disable-next-line no-unused-vars
+    const [ user, setUser ] = useState(JSON.parse(localStorage.getItem('user')))
     const navigate = useNavigate()
     const [redirectToHome, setRedirectToHome] = useState(false)
 
